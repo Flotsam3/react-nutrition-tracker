@@ -1,0 +1,14 @@
+h2 {
+    position: relative;
+    margin: 10px 0;
+    padding: 10px 0;
+    background-color: #322f3d70;
+    font-size: 1.5rem;
+    letter-spacing: 0.3rem;
+    text-align: center;
+}
+
+.consumption-link {
+    position: absolute;
+    top: 200px;
+}

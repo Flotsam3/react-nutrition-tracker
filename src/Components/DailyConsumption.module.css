@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.bilanz {
+    margin-bottom: 20px;
+    padding: 10px 0;
+    background-color: #322f3d70;
+    font-size: 1.5rem;
+    color: whitesmoke;
+    letter-spacing: 0.3rem;
+    text-align: center;
+}
+
+.bilanz-inhalt {
+    position: relative;
+    padding: 0 15px;
+}
+
+.bilanz-title {
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    justify-content: center;
+    column-gap: 10px;
+    width: 100%;
+    text-align: center;
+}  
+
+.bilanz-title span {
+    position: relative;
+    line-height: 2.3rem;
+    border: none;
+    margin: 0 15px;
+}
+
+.bilanz-summe {
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    justify-content: center;
+    column-gap: 10px;
+    width: 100%;
+    margin-bottom: 25px;
+    text-align: center;
+}  
+
+.bilanz-summe span {
+    line-height: 2.3rem;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    margin: 0 15px;
+}
+
+.alle-loeschen {
+    display: block;
+    height: 40px;
+    width: 100px;
+    margin: 0 auto 20px;
+    background-color: #322f3d70;
+    color: whitesmoke;
+    box-shadow: 0 0 0 3px #ffe78f;
+    border: none;
+    border-radius: 5px;
+}
+
+.link-lebensmittel {
+    position: absolute;
+    top: 100px;
+    right: 30px;
+}
+
+.link-lebensmittel i {
+    font-size: 2.5rem;
+    color: #ffe78f;
+}
+
+.verbrauch {
+    margin-bottom: 20px;
+    padding: 10px 0;
+    background-color: #322f3d70;
+    /* border-bottom: 3px solid #322f3d; */
+    font-size: 1.5rem;
+    color: whitesmoke;
+    letter-spacing: 0.3rem;
+    text-align: center;
+}
+
+.verbrauch-container {
+    padding: 0 15px;
+}
+
+.verbrauch-title {
+    display: grid;
+    grid-template-columns: auto repeat(6, 80px);
+    column-gap: 10px;
+    width: 100%;
+    /* padding: 0 15px; */
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.verbrauch-title .data__button {
+    display: block;
+    height: 40px;
+    width: 40px;
+    margin: 0 auto;
+    background-color: #322f3d;
+    color: whitesmoke;
+    box-shadow: 0 0 0 5px #ffe78f;
+    border-radius: 50%;
+    border: none; 
+}
+
+.verbrauch-title p:not(.data__food):not(.data__menge) {
+    background-color: #87556f;
+}
+
+.verbrauch-title p {
+    line-height: 2.3rem;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+}
+
+.verbrauch-title .data__menge {
+    border: none;
+}
+
+.verbrauch-title .data__button:focus {
+    outline: 0;
+}
+
+.data__food {
+    background-color: #59405c;
+}
+
+.liste-verbrauch {
+    display: grid;
+    grid-template-columns: auto repeat(6, 80px);
+    column-gap: 10px;
+    width: 100%;
+    /* padding: 0 15px; */
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.liste-verbrauch span {
+    line-height: 2.3rem;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+}
+
+.liste-verbrauch span:not(.data__food) {
+    background-color: #87556f;
+}
+
+.liste-verbrauch input {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #ffe78f;
+    color: darkslategray;
+    border-radius: 5px;
+}
+
+.liste-verbrauch .löschen::placeholder {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.liste-verbrauch .löschen {
+    text-align: center;
+    border: none;
+}
