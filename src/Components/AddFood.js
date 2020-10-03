@@ -12,8 +12,13 @@ function AddFood(props) {
       const [key, value] = pair;
       addDataInput[key] = value;
     }
+
+    if (!addDataInput.name || !addDataInput.kcal || !addDataInput.carbs || !addDataInput.protein || !addDataInput.fat){
+      alert('You need to fill in every field')
+    }else{
+      props.onAddData(addDataInput);
+    }
     
-    props.onAddData(addDataInput);
   };
 
   return (

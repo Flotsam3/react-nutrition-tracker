@@ -8,7 +8,6 @@ import Consumption from "./Consumption";
 export const FoodDataContext = React.createContext();
 
 function Database() {
-  // const [toggleSort, setToggleSort] = useState('a');
   const toggleSort = useRef('a');
   
   const [foodData, setFoodData] = useState(
@@ -106,7 +105,6 @@ function Database() {
   
   useEffect(()=>{
     localStorage.setItem('consumptionDatabase', JSON.stringify(consumptionData))
-    console.log(consumptionData);
   }, [consumptionData])
 
   return (

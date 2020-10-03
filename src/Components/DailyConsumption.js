@@ -3,7 +3,6 @@ import styles from "./DailyConsumption.module.css";
 
 function DailyConsumption(props) {
   const consumptionList = props.dailyConsumption;
-  console.log(consumptionList);
   const inputGramm = useRef([]);
   const inputName = useRef([]);
   const inputKcal = useRef([]);

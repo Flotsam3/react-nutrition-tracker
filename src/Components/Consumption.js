@@ -7,42 +7,42 @@ function Consumption() {
   const [consumptionData, setConsumptionData] = useState(
     JSON.parse(localStorage.getItem("consumptionDatabase")) || []
   )
-    console.log(consumptionData);
-    const [balance, setBalance] = useState([]);
+  const [balance, setBalance] = useState([]);
 
-    useEffect(() => {
-      if (consumptionData !== []){
-        let balanceKcal = 0;
-        let balanceCho = 0;
-        let balancePro = 0;
-        let balanceFat = 0;
+  useEffect(() => {
+    if (consumptionData !== []){
+      let balanceKcal = 0;
+      let balanceCho = 0;
+      let balancePro = 0;
+      let balanceFat = 0;
 
-        consumptionData.map((item)=>{
-          balanceKcal += item.Kcal;
-          balanceCho += item.CHO;
-          balancePro += item.Pro;
-          balanceFat += item.Fat;
-        })
+      consumptionData.map((item)=>{
+        balanceKcal += item.Kcal;
+        balanceCho += item.CHO;
+        balancePro += item.Pro;
+        balanceFat += item.Fat;
+      })
 
-        setBalance([balanceKcal, balanceCho, balancePro, balanceFat]);
-      }
-    }, [])
-
-    const deleteConsumptionlistItem = (item)=>{
-      const newList = [...consumptionData];
-      newList.splice(item, 1);
-      console.log(newList);
-      setConsumptionData(newList);
+      setBalance([balanceKcal, balanceCho, balancePro, balanceFat]);
     }
+  }, [consumptionData])
 
-    const handleClearConsumption = ()=>{
-      localStorage.setItem("consumptionDatabase", JSON.stringify(''));
-      setBalance([0, 0, 0, 0]);
-    }
+  const deleteConsumptionlistItem = (item)=>{
+    const newList = [...consumptionData];
+    newList.splice(item, 1);
+    console.log(newList);
+    setConsumptionData(newList);
+  }
 
-    useEffect(()=>{
-      localStorage.setItem('consumptionDatabase', JSON.stringify(consumptionData))
-    }, [consumptionData])
+  const handleClearConsumption = ()=>{
+    localStorage.setItem("consumptionDatabase", JSON.stringify(''));
+    setConsumptionData([]);
+    setBalance([0, 0, 0, 0]);
+  }
+
+  useEffect(()=>{
+    localStorage.setItem('consumptionDatabase', JSON.stringify(consumptionData))
+  }, [consumptionData])
 
   return (
     <div>

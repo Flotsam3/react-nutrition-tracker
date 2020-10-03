@@ -80,6 +80,10 @@
   .data__title button:not(.data__food):not(.data__button) {
     background-color: #87556f;
   }
+
+  .data__title button:focus {
+    outline: 0;
+  }
   
   .data__title input {
     margin: 0;
