@@ -91,7 +91,7 @@
 
 .verbrauch-title {
     display: grid;
-    grid-template-columns: auto repeat(6, 80px);
+    grid-template-columns: auto repeat(5, 80px);
     column-gap: 10px;
     width: 100%;
     /* padding: 0 15px; */
@@ -135,7 +135,7 @@
 
 .liste-verbrauch {
     display: grid;
-    grid-template-columns: auto repeat(6, 80px);
+    grid-template-columns: auto repeat(5, 80px);
     column-gap: 10px;
     width: 100%;
     /* padding: 0 15px; */
@@ -144,10 +144,24 @@
 }
 
 .liste-verbrauch span {
+    position: relative;
     line-height: 2.3rem;
     border: 2px solid whitesmoke;
     border-radius: 5px;
 }
+
+.liste-verbrauch span button {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    height: 20px;
+    width: 20px;
+    color: whitesmoke;
+    background-color: #322f3d70;
+    line-height: 1rem;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+  }
 
 .liste-verbrauch span:not(.data__food) {
     background-color: #87556f;

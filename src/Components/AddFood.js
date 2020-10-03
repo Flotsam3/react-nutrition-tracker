@@ -7,12 +7,12 @@ function AddFood(props) {
   const handleGetFormData = () => {
     const formData = new FormData(formRef.current);
     const addDataInput = {};
-
+    
     for (const pair of formData.entries()) {
       const [key, value] = pair;
       addDataInput[key] = value;
     }
-
+    
     props.onAddData(addDataInput);
   };
 

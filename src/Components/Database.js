@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef} from "react";
 import AddFood from "./AddFood";
 import FoodlistContent from "./FoodlistContent";
 import styles from "./Database.module.css";
@@ -8,6 +8,9 @@ import Consumption from "./Consumption";
 export const FoodDataContext = React.createContext();
 
 function Database() {
+  // const [toggleSort, setToggleSort] = useState('a');
+  const toggleSort = useRef('a');
+  
   const [foodData, setFoodData] = useState(
     JSON.parse(localStorage.getItem("foodDatabase")) || []
   );
@@ -33,6 +36,8 @@ function Database() {
       if (data[0].current[i].value !== ""){
         let gramm = data[0].current[i].value;
         let name = data[1].current[i].textContent;
+        const dummy = name.slice(0, -1);
+        name = dummy;
         let kcal = data[2].current[i].textContent;
         let cho = data[3].current[i].textContent;
         let pro = data[4].current[i].textContent;
@@ -51,6 +56,49 @@ function Database() {
     }
     setConsumptionData(consumptionData.concat(consumption));
   }
+
+  const handleSortFoodlist = (name)=>{
+    const newList = [...foodData];
+
+    newList.sort((a, b)=>{
+      const aName = a[name].toLowerCase();
+      const bName = b[name].toLowerCase();
+
+      if (toggleSort.current === 'a'){
+        if (aName < bName) {
+          return -1;
+        }
+        if (aName > bName) {
+            return 1;
+        }
+          return 0;
+
+      }else{
+
+        if (aName < bName) {
+          return 1;
+        }
+        if (aName > bName) {
+            return -1;
+        }
+          return 0;
+      }
+    })
+
+    if (toggleSort.current === 'a'){
+      toggleSort.current = 'd';
+    }else{
+      toggleSort.current = 'a';
+    }
+
+    setFoodData(newList);
+  }
+
+  const deleteFoodlistItem = (item)=>{
+    const newList = [...foodData];
+    newList.splice(item, 1);
+    setFoodData(newList);
+  }
   
   useEffect(() => {
     localStorage.setItem("foodDatabase", JSON.stringify(foodData));
@@ -65,15 +113,9 @@ function Database() {
     <div>
       <h2>Add New Food</h2>
       <AddFood onAddData={handleAddData} />
-      <BrowserRouter>
-        <li>
-          <Link to="/consumption">Consumption</Link>
-        </li>
-        <Route path="/consumption" component={Consumption}></Route>
-      </BrowserRouter>
       <h2>Foodlist</h2>
       <FoodDataContext.Provider value={foodData}>
-          <FoodlistContent onGetConsumption={handleGetConsumption}/>
+          <FoodlistContent onGetConsumption={handleGetConsumption} onDelete={deleteFoodlistItem} onSort={handleSortFoodlist}/>
       </FoodDataContext.Provider>
     </div>
   );

@@ -16,21 +16,25 @@ function FoodlistContent(props) {
     props.onGetConsumption([inputGramm, inputName, inputKcal, inputCho, inputPro, inputFat]);
   };
 
+  const handleDelete = (ev) => {
+    props.onDelete(ev.target.id);
+  }
+
   return (
     <>
       <div className={styles.data}>
       <div className={styles.data__title}>
-        <button className={styles.data__food}>Food</button>
-        <button className={styles.data__kcal}>Kcal</button>
-        <button className={styles.data__carbs}>CHO</button>
-        <button className={styles.data__protein}>Pro</button>
-        <button className={styles.data__fat}>Fat</button>
+        <button onClick={()=>{props.onSort('name')}} className={styles.data__food}>Food</button>
+        <button onClick={()=>{props.onSort('kcal')}} className={styles.data__kcal}>Kcal</button>
+        <button onClick={()=>{props.onSort('carbs')}} className={styles.data__carbs}>CHO</button>
+        <button onClick={()=>{props.onSort('protein')}} className={styles.data__protein}>Pro</button>
+        <button onClick={()=>{props.onSort('fat')}} className={styles.data__fat}>Fat</button>
         <button onClick={handleGetConsumptionData} className={styles.data__button}>OK</button>
       </div>
         {foodList.map((item, index) => (
           <div key={index} className={styles.data__content}>
             <span key={index + 1} ref={el => inputName.current[index]=el} className={styles.data__food}>
-              {item.name}
+              {item.name}<button id={index} onClick={handleDelete}>x</button>
             </span>
             <span key={index + 2} ref={el => inputKcal.current[index]=el} className={styles.data__kcal}>
               {item.kcal}

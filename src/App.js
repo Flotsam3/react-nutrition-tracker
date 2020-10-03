@@ -1,25 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Link, Route } from "react-router-dom";
+import Database from "./Components/Database";
+import Consumption from "./Components/Consumption";
+import styles from './App.module.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+     
+      <Link to="/database"><i id={styles["link-list"]} className="fas fa-file-alt"></i></Link>
+      <Link to="/consumption"><i id={styles["link-pepper"]} className="fas fa-pepper-hot"></i></Link>
+      
+      <Route path="/database" component={Database}></Route>
+      <Route path="/consumption" component={Consumption}></Route>
+    </BrowserRouter>
   );
 }
 

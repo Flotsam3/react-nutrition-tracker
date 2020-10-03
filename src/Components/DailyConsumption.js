@@ -11,6 +11,10 @@ function DailyConsumption(props) {
   const inputPro = useRef([]);
   const inputFat = useRef([]);
 
+  const handleDelete = (ev) => {
+    props.onDelete(ev.target.id);
+  }
+
   return (
     <div>
       <h2 className={styles.verbrauch}>Daily Consumption</h2>
@@ -22,17 +26,17 @@ function DailyConsumption(props) {
           <p className={styles.data__carbs}>CHO</p>
           <p className={styles.data__protein}>Pro</p>
           <p className={styles.data__fat}>Fat</p>
-          <p className={styles.data__menge}>
+          {/* <p className={styles.data__menge}>
             <button className={styles.data__button}>OK</button>
-          </p>
+          </p> */}
         </div>
         <div className={styles["verbrauch-inhalt"]}>
         {consumptionList.map((item, index) => (
           <div key={index} className={styles["liste-verbrauch"]}>
               <span key={index + 1} ref={el => inputName.current[index]=el} className={styles.data__food}>
-                {item.Name}
+                {item.Name}<button id={index} onClick={handleDelete}>x</button>
               </span>
-              <span key={index + 2} ref={el => inputKcal.current[index]=el} className={styles.data__gramm}>
+              <span key={index + 2} ref={el => inputGramm.current[index]=el} className={styles.data__gramm}>
                 {item.Gramm}
               </span>
               <span key={index + 3} ref={el => inputKcal.current[index]=el} className={styles.data__kcal}>
