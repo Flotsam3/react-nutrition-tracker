@@ -1,4 +1,4 @@
-A small nutrition tracker built with React. Build up your own database by adding new groceries and enter the amount of your daily consumption to each food. You get a balance of your total consumed calories, carbs, proteins and fats. 
+A small nutrition tracker built with React. Build up your own database by adding new groceries and enter the amount of your daily consumption to each food. You will then see an overview of your total consumed calories, carbs, proteins and fats. 
 
 Features: Add, remove and sort groceries. See a balance of your daily consumption, clear daily consumption or remove single items from your daily consumption.
 
