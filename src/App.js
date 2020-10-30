@@ -13,6 +13,7 @@ function App() {
       
       <Route path="/database" component={Database}></Route>
       <Route path="/consumption" component={Consumption}></Route>
+      
     </BrowserRouter>
   );
 }

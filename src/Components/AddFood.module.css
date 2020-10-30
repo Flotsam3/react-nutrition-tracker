@@ -47,6 +47,22 @@
   border: none;
 }
 
-.top-bar button:focus {
+.top-bar button:focus, .switch-input{
   outline: 0;
+}
+
+.top-bar button:hover, .switch-input:hover  {
+  box-shadow: 0 0 0 5px #322f3d;
+}
+
+.switch-input {
+  display: block;
+  height: 40px;
+  width: 40px;
+  margin: 20px 0 0 10px;
+  background-color: #322f3d;
+  color: whitesmoke;
+  box-shadow: 0 0 0 5px #ffe78f;
+  border-radius: 50%;
+  border: none;
 }

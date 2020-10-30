@@ -14,6 +14,7 @@ function FoodlistContent(props) {
 
   const handleGetConsumptionData = () => {
     props.onGetConsumption([inputGramm, inputName, inputKcal, inputCho, inputPro, inputFat]);
+    console.log(inputGramm);
   };
 
   const handleDelete = (ev) => {

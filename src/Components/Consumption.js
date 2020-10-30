@@ -46,7 +46,7 @@ function Consumption() {
 
   return (
     <div>
-      <Balance showBalance={balance} onClear={handleClearConsumption} />
+      <Balance showBalance={balance} onClear={handleClearConsumption} onConsumptionData={consumptionData} />
       <DailyConsumption dailyConsumption={consumptionData} onDelete={deleteConsumptionlistItem} />
     </div>
   );

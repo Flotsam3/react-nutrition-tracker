@@ -1,0 +1,112 @@
+.verbrauch {
+    margin-bottom: 20px;
+    padding: 10px 0;
+    background-color: #322f3d70;
+    /* border-bottom: 3px solid #322f3d; */
+    font-size: 1.5rem;
+    color: whitesmoke;
+    letter-spacing: 0.3rem;
+    text-align: center;
+}
+
+.verbrauch-container {
+    padding: 0 15px;
+}
+
+.verbrauch-title {
+    display: grid;
+    grid-template-columns: auto repeat(5, 80px);
+    column-gap: 10px;
+    width: 100%;
+    /* padding: 0 15px; */
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.verbrauch-title .data__button {
+    display: block;
+    height: 40px;
+    width: 40px;
+    margin: 0 auto;
+    background-color: #322f3d;
+    color: whitesmoke;
+    box-shadow: 0 0 0 5px #ffe78f;
+    border-radius: 50%;
+    border: none; 
+}
+
+.verbrauch-title p:not(.data__food):not(.data__menge) {
+    background-color: #87556f;
+}
+
+.verbrauch-title p {
+    line-height: 2.3rem;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+}
+
+.verbrauch-title .data__menge {
+    border: none;
+}
+
+.verbrauch-title .data__button:focus {
+    outline: 0;
+}
+
+.data__food {
+    background-color: #59405c;
+}
+
+.liste-verbrauch {
+    display: grid;
+    grid-template-columns: auto repeat(5, 80px);
+    column-gap: 10px;
+    width: 100%;
+    /* padding: 0 15px; */
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.liste-verbrauch span {
+    position: relative;
+    line-height: 2.3rem;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+}
+
+.liste-verbrauch span button {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    height: 20px;
+    width: 20px;
+    color: whitesmoke;
+    background-color: #322f3d70;
+    line-height: 1rem;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+  }
+
+.liste-verbrauch span:not(.data__food) {
+    background-color: #87556f;
+}
+
+.liste-verbrauch input {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #ffe78f;
+    color: darkslategray;
+    border-radius: 5px;
+}
+
+.liste-verbrauch .löschen::placeholder {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.liste-verbrauch .löschen {
+    text-align: center;
+    border: none;
+}

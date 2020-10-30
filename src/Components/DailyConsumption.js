@@ -25,9 +25,6 @@ function DailyConsumption(props) {
           <p className={styles.data__carbs}>CHO</p>
           <p className={styles.data__protein}>Pro</p>
           <p className={styles.data__fat}>Fat</p>
-          {/* <p className={styles.data__menge}>
-            <button className={styles.data__button}>OK</button>
-          </p> */}
         </div>
         <div className={styles["verbrauch-inhalt"]}>
         {consumptionList.map((item, index) => (

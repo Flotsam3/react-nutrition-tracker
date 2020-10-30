@@ -51,11 +51,16 @@
     margin: 0 15px;
 }
 
-.alle-loeschen {
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.alle-loeschen, .archive {
     display: block;
     height: 40px;
     width: 100px;
-    margin: 0 auto 20px;
+    margin: 0 20px 20px;
     background-color: #322f3d70;
     color: whitesmoke;
     box-shadow: 0 0 0 3px #ffe78f;
@@ -63,8 +68,12 @@
     border-radius: 5px;
 }
 
-.alle-loeschen:focus {
+.alle-loeschen:focus, .archive:focus {
     outline: 0;
+}
+
+.alle-loeschen:hover, .archive:hover {
+    box-shadow: 0 0 0 5px #322f3d70;
 }
 
 .link-lebensmittel {
