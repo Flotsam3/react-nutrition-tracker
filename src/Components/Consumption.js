@@ -6,7 +6,12 @@ function Consumption() {
 
   const [consumptionData, setConsumptionData] = useState(
     JSON.parse(localStorage.getItem("consumptionDatabase")) || []
-  )
+  );
+
+  const [archiveData, setArchiveData] = useState(
+    JSON.parse(localStorage.getItem('archiveDatabase')) || []
+  );
+
   const [balance, setBalance] = useState([]);
 
   useEffect(() => {
@@ -30,7 +35,6 @@ function Consumption() {
   const deleteConsumptionlistItem = (item)=>{
     const newList = [...consumptionData];
     newList.splice(item, 1);
-    console.log(newList);
     setConsumptionData(newList);
   }
 
@@ -40,13 +44,41 @@ function Consumption() {
     setBalance([0, 0, 0, 0]);
   }
 
-  useEffect(()=>{
-    localStorage.setItem('consumptionDatabase', JSON.stringify(consumptionData))
-  }, [consumptionData])
+  const handleArchiveData = ()=>{
+    let kcal = 0;
+    let carbs = 0;
+    let pro = 0;
+    let fat = 0;
+    const date = new Date();
+    const currentDate = date.toLocaleString('de-DE', {dateStyle: "full"});
+
+    consumptionData.map((item)=>{
+        kcal += item.Kcal;
+        carbs += item.CHO;
+        pro += item.Pro;
+        fat += item.Fat;
+    });
+
+    const newArchiveData = [{
+        Date: currentDate,
+        Kcal: kcal,
+        CHO: carbs,
+        Pro: pro,
+        Fat: fat
+    }]
+  
+    const oldArchiveData = [...archiveData];
+    const updateArchiveData = newArchiveData.concat(oldArchiveData)
+    handleArchiveLocalStorage(updateArchiveData);
+  };
+
+  const handleArchiveLocalStorage = (inputData) => {
+    localStorage.setItem("archiveDatabase", JSON.stringify(inputData));
+  };
 
   return (
     <div>
-      <Balance showBalance={balance} onClear={handleClearConsumption} onConsumptionData={consumptionData} />
+      <Balance showBalance={balance} onClear={handleClearConsumption} onCalcArchive={handleArchiveData} onArchiveData={archiveData} />
       <DailyConsumption dailyConsumption={consumptionData} onDelete={deleteConsumptionlistItem} />
     </div>
   );

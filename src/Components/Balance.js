@@ -5,9 +5,9 @@ import Archive from './Archive';
 
 function Balance(props) {
     const history = useHistory();
-    const consumptionData = props.onConsumptionArchive;
-
+    
     const handleRouteToArchive = ()=>{
+        props.onCalcArchive();
         history.push("/archive");
     }
 
@@ -33,7 +33,7 @@ function Balance(props) {
                 </div>
                 <a href="index.html" className={styles['link-lebensmittel']}><i className={styles['fas fa-pepper-hot']}></i></a>
             </div>
-            <Route path="/archive" component={Archive} onConsumptionArchive={consumptionData} />
+            <Route path="/archive" component={Archive}/>
         </div>
     )
 }
