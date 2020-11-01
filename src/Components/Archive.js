@@ -17,6 +17,11 @@ function Archive(props) {
         localStorage.setItem("archiveDatabase", JSON.stringify(newList))
     }
 
+    const handleDeleteAll = ()=>{
+      localStorage.setItem("archiveDatabase", JSON.stringify([]));
+      setArchiveList([]);
+    }
+
     const handleSortArchivelist = (name)=>{
         const newList = [...archiveList];
     
@@ -57,10 +62,10 @@ function Archive(props) {
     return (
         <div>
             <div className={styles.archive}>Archive</div>
-            <button className={styles['alle-loeschen']}>Clear</button>
+            <button onClick={handleDeleteAll} className={styles['alle-loeschen']}>Clear</button>
             <div className={styles["verbrauch-inhalt"]}>
                 <div className={styles["verbrauch-title"]}>
-                    <button onClick={()=>{handleSortArchivelist('Date')}} className={styles.data__food}>Date</button>
+                    <button onClick={()=>{handleSortArchivelist('DateId')}} className={styles.data__food}>Date</button>
                     <button onClick={()=>{handleSortArchivelist('Kcal')}} className={styles.data__kcal}>Kcal</button>
                     <button onClick={()=>{handleSortArchivelist('CHO')}} className={styles.data__carbs}>CHO</button>
                     <button onClick={()=>{handleSortArchivelist('Pro')}} className={styles.data__protein}>Pro</button>

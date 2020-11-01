@@ -28,7 +28,7 @@ function Consumption() {
         balanceFat += item.Fat;
       })
 
-      setBalance([balanceKcal, balanceCho, balancePro, balanceFat]);
+      setBalance([balanceKcal.toFixed(1), balanceCho.toFixed(1), balancePro.toFixed(1), balanceFat.toFixed(1)]);
     }
   }, [consumptionData])
 
@@ -51,6 +51,7 @@ function Consumption() {
     let fat = 0;
     const date = new Date();
     const currentDate = date.toLocaleString('de-DE', {dateStyle: "full"});
+    const dateId = date.getTime();
 
     consumptionData.map((item)=>{
         kcal += item.Kcal;
@@ -61,10 +62,11 @@ function Consumption() {
 
     const newArchiveData = [{
         Date: currentDate,
-        Kcal: kcal,
-        CHO: carbs,
-        Pro: pro,
-        Fat: fat
+        Kcal: kcal.toFixed(1),
+        CHO: carbs.toFixed(1),
+        Pro: pro.toFixed(1),
+        Fat: fat.toFixed(1),
+        DateId: dateId
     }]
   
     const oldArchiveData = [...archiveData];
