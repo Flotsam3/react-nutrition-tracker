@@ -61,7 +61,7 @@ function Archive(props) {
 
     return (
         <div>
-            <div className={styles.archive}>{(props.flagStatus === 'de')?'Archive':'Archiv'}</div>
+            <div className={styles.archive}>{(props.flagStage === 'de')?'Archive':'Archiv'}</div>
             <button onClick={handleDeleteAll} className={styles['alle-loeschen']}>{(props.flagStage === 'de')?'Clear':'Löschen'}</button>
             <div className={styles["verbrauch-inhalt"]}>
                 <div className={styles["verbrauch-title"]}>

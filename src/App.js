@@ -6,10 +6,10 @@ import Archive from "./Components/Archive";
 import styles from './App.module.css';
 
 function App() {
-  const [flag, setflag] = useState(localStorage.getItem('flag') || localStorage.setItem('flag', 'de'));
+  const [flag, setflag] = useState(localStorage.getItem('flag') || 'de');
 
   const onHandleSetFlag = (flag)=>{
-    console.log(flag);
+    localStorage.setItem('flag', flag);
     setflag(flag);
   }
 

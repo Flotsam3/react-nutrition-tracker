@@ -14,12 +14,19 @@ function FoodlistContent(props) {
 
   const handleGetConsumptionData = () => {
     props.onGetConsumption([inputGramm, inputName, inputKcal, inputCho, inputPro, inputFat]);
-    console.log(inputGramm);
+    
+    handleResetInput();
   };
 
   const handleDelete = (ev) => {
     props.onDelete(ev.target.id);
   }
+
+  const handleResetInput = () => {
+    Array.from(document.querySelectorAll("input")).forEach(
+      input => (input.value = "")
+    );
+  };
 
   return (
     <>

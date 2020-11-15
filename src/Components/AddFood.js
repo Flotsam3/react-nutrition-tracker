@@ -18,6 +18,14 @@ function AddFood(props) {
     }else{
       props.onAddData(addDataInput);
     }
+
+    handleResetInput();
+  };
+
+  const handleResetInput = () => {
+    Array.from(document.querySelectorAll("input")).forEach(
+      input => (input.value = "")
+    );
   };
 
   return (
@@ -27,9 +35,9 @@ function AddFood(props) {
           <div className={styles["form-content"]}>
             <input type="text" name="name"  placeholder="Name" />
             <input type="number" name="kcal" placeholder="Kcal" />
-            <input type="number" name="carbs" placeholder={(props.flagStatus === 'de') ? "Kh" : "CHO"} />
+            <input type="number" name="carbs" placeholder={(props.flagStatus === 'de') ? "CHO" : "Kh"} />
             <input type="number" name="protein" placeholder="Pro" />
-            <input type="number" name="fat" placeholder={(props.flagStatus === 'de') ? "Fett" : "Fat"} />
+            <input type="number" name="fat" placeholder={(props.flagStatus === 'de') ? "Fat" : "Fett"} />
             <button onClick={props.onToggleButton} className={styles['switch-input']}><span className="material-icons">
             restaurant_menu
             </span></button>

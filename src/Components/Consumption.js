@@ -35,6 +35,7 @@ function Consumption(props) {
   const deleteConsumptionlistItem = (item)=>{
     const newList = [...consumptionData];
     newList.splice(item, 1);
+    localStorage.setItem("consumptionDatabase", JSON.stringify(newList))
     setConsumptionData(newList);
   }
 
