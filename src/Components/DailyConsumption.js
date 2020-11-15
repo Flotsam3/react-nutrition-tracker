@@ -16,15 +16,15 @@ function DailyConsumption(props) {
 
   return (
     <div>
-      <h2 className={styles.verbrauch}>Daily Consumption</h2>
+      <h2 className={styles.verbrauch}>{(props.flagState === 'de')?'Daily Consumption':'Tagesverbrauch'}</h2>
       <div className={styles["verbrauch-container"]}>
         <div className={styles["verbrauch-title"]}>
-          <p className={styles.data__food}>Food</p>
+          <p className={styles.data__food}>{(props.flagState === 'de')?'Food':'Lebensmittel'}</p>
           <p className={styles.data__gramm}>Gramm</p>
           <p className={styles.data__kcal}>Kcal</p>
-          <p className={styles.data__carbs}>CHO</p>
+          <p className={styles.data__carbs}>{(props.flagState === 'de')?'CHO':'Kh'}</p>
           <p className={styles.data__protein}>Pro</p>
-          <p className={styles.data__fat}>Fat</p>
+          <p className={styles.data__fat}>{(props.flagState === 'de')?'Fat':'Fett'}</p>
         </div>
         <div className={styles["verbrauch-inhalt"]}>
         {consumptionList.map((item, index) => (

@@ -61,15 +61,15 @@ function Archive(props) {
 
     return (
         <div>
-            <div className={styles.archive}>Archive</div>
-            <button onClick={handleDeleteAll} className={styles['alle-loeschen']}>Clear</button>
+            <div className={styles.archive}>{(props.flagStatus === 'de')?'Archive':'Archiv'}</div>
+            <button onClick={handleDeleteAll} className={styles['alle-loeschen']}>{(props.flagStage === 'de')?'Clear':'Löschen'}</button>
             <div className={styles["verbrauch-inhalt"]}>
                 <div className={styles["verbrauch-title"]}>
-                    <button onClick={()=>{handleSortArchivelist('DateId')}} className={styles.data__food}>Date</button>
+                    <button onClick={()=>{handleSortArchivelist('DateId')}} className={styles.data__food}>{(props.flagStage === 'de')?'Date':'Datum'}</button>
                     <button onClick={()=>{handleSortArchivelist('Kcal')}} className={styles.data__kcal}>Kcal</button>
-                    <button onClick={()=>{handleSortArchivelist('CHO')}} className={styles.data__carbs}>CHO</button>
+                    <button onClick={()=>{handleSortArchivelist('CHO')}} className={styles.data__carbs}>{(props.flagStage === 'de')?'CHO':'Kh'}</button>
                     <button onClick={()=>{handleSortArchivelist('Pro')}} className={styles.data__protein}>Pro</button>
-                    <button onClick={()=>{handleSortArchivelist('Fat')}} className={styles.data__fat}>Fat</button>
+                    <button onClick={()=>{handleSortArchivelist('Fat')}} className={styles.data__fat}>{(props.flagStage === 'de')?'Fat':'Fett'}</button>
                 </div>
                 {archiveList.map((item, index) => (
                 <div key={index} className={styles["liste-verbrauch"]}>

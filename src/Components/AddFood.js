@@ -25,11 +25,11 @@ function AddFood(props) {
       <div className={styles["neuer-eintrag"]}>
         <form ref={formRef} action="#">
           <div className={styles["form-content"]}>
-            <input type="text" name="name" placeholder="name" />
+            <input type="text" name="name"  placeholder="Name" />
             <input type="number" name="kcal" placeholder="Kcal" />
-            <input type="number" name="carbs" placeholder="CHO" />
+            <input type="number" name="carbs" placeholder={(props.flagStatus === 'de') ? "Kh" : "CHO"} />
             <input type="number" name="protein" placeholder="Pro" />
-            <input type="number" name="fat" placeholder="Fat" />
+            <input type="number" name="fat" placeholder={(props.flagStatus === 'de') ? "Fett" : "Fat"} />
             <button onClick={props.onToggleButton} className={styles['switch-input']}><span className="material-icons">
             restaurant_menu
             </span></button>

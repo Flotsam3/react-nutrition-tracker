@@ -25,11 +25,11 @@ function FoodlistContent(props) {
     <>
       <div className={styles.data}>
       <div className={styles.data__title}>
-        <button onClick={()=>{props.onSort('name')}} className={styles.data__food}>Food</button>
+        <button onClick={()=>{props.onSort('name')}} className={styles.data__food}>{(props.flagState === 'de')?'Food':'Lebensmittel'}</button>
         <button onClick={()=>{props.onSort('kcal')}} className={styles.data__kcal}>Kcal</button>
-        <button onClick={()=>{props.onSort('carbs')}} className={styles.data__carbs}>CHO</button>
+        <button onClick={()=>{props.onSort('carbs')}} className={styles.data__carbs}>{(props.flagState === 'de')?'CHO':'Kh'}</button>
         <button onClick={()=>{props.onSort('protein')}} className={styles.data__protein}>Pro</button>
-        <button onClick={()=>{props.onSort('fat')}} className={styles.data__fat}>Fat</button>
+        <button onClick={()=>{props.onSort('fat')}} className={styles.data__fat}>{(props.flagState === 'de')?'Fat':'Fett'}</button>
         <button onClick={handleGetConsumptionData} className={styles.data__button}>OK</button>
       </div>
         {foodList.map((item, index) => (

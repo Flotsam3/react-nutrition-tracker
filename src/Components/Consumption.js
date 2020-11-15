@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import Balance from "./Balance";
 import DailyConsumption from "./DailyConsumption";
 
-function Consumption() {
+function Consumption(props) {
 
   const [consumptionData, setConsumptionData] = useState(
     JSON.parse(localStorage.getItem("consumptionDatabase")) || []
@@ -80,8 +80,8 @@ function Consumption() {
 
   return (
     <div>
-      <Balance showBalance={balance} onClear={handleClearConsumption} onCalcArchive={handleArchiveData} onArchiveData={archiveData} />
-      <DailyConsumption dailyConsumption={consumptionData} onDelete={deleteConsumptionlistItem} />
+      <Balance showBalance={balance} onClear={handleClearConsumption} onCalcArchive={handleArchiveData} onArchiveData={archiveData} flagStatus={props.flagState} />
+      <DailyConsumption dailyConsumption={consumptionData} onDelete={deleteConsumptionlistItem} flagState={props.flagState} />
     </div>
   );
 }

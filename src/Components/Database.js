@@ -8,10 +8,10 @@ import Consumption from "./Consumption";
 
 export const FoodDataContext = React.createContext();
 
-function Database() {
+function Database(props) {
   const toggleSort = useRef('a');
   let menuName = useRef('');
-  
+    
   const [foodData, setFoodData] = useState(
     JSON.parse(localStorage.getItem("foodDatabase")) || []
   );
@@ -169,17 +169,17 @@ function Database() {
       {(buttonToggle === 'food')
       ?
       (<>
-        <h2>Add New Food</h2>
-        <AddFood onAddData={handleAddData} onToggleButton={handleFoodMenuToggle}/>
+        <h2>{(props.flagStatus === 'de')?'Add New Food':'Lebensmittel hinzufügen'}</h2>
+        <AddFood onAddData={handleAddData} onToggleButton={handleFoodMenuToggle} flagStatus={props.flagStatus}/>
       </>)
       :
       (<>
-        <h2>Add New Menu</h2>
+        <h2>{(props.flagStatus === 'de')?'Add New Menu':'Neues Menü hinzufügen'}</h2>
         <AddMenu onAddMenu={handleAddMenu} onToggleButton={handleFoodMenuToggle}/>
       </>)}
-      <h2>Foodlist</h2>
+      <h2>{(props.flagStatus === 'de')?'Foodlist':'Lebensmittelliste'}</h2>
       <FoodDataContext.Provider value={foodData}>
-          <FoodlistContent onGetConsumption={handleGetConsumption} onDelete={deleteFoodlistItem} onSort={handleSortFoodlist}/>
+          <FoodlistContent onGetConsumption={handleGetConsumption} onDelete={deleteFoodlistItem} onSort={handleSortFoodlist} flagState={props.flagStatus}/>
       </FoodDataContext.Provider>
     </div>
   );

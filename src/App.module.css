@@ -29,3 +29,16 @@ body {
     color: tan;
     z-index: 1;
 }
+
+.flag {
+    position: absolute;
+    top: 13px;
+    right: 50px;
+    border: none;
+    z-index: 1;
+    background-color: transparent;
+}
+
+.flag:focus {
+    outline: 0;
+}
