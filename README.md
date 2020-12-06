@@ -1,6 +1,6 @@
-A small nutrition tracker built with React. Build up your own database by adding new groceries and enter the amount of your daily consumption to each food. You will then see an overview of your total consumed calories, carbs, proteins and fats. 
+A small nutrition tracker built with React as an application for desktop and tablet devices. Build up your own database by adding new groceries and enter the amount of your daily consumption to each food. You will then see an overview of your total consumed calories, carbs, proteins and fats. You can also create menus by selecting multiple food from your list. At the end of each day you have the opportunity to save your overall consumption for the day in an archive.
 
-Features: Add, remove and sort groceries. See a balance of your daily consumption, clear daily consumption or remove single items from your daily consumption.
+Features: Add, remove and sort groceries. See a balance of your daily consumption, clear daily consumption or remove single items from your daily consumption. Create menus and save your data in the archive.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
