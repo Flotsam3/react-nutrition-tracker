@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/nutrition-tracker-int/static/css/main.51f81693.chunk.css",
-    "main.js": "/nutrition-tracker-int/static/js/main.c43651a7.chunk.js",
-    "main.js.map": "/nutrition-tracker-int/static/js/main.c43651a7.chunk.js.map",
-    "runtime-main.js": "/nutrition-tracker-int/static/js/runtime-main.a6caa26a.js",
-    "runtime-main.js.map": "/nutrition-tracker-int/static/js/runtime-main.a6caa26a.js.map",
-    "static/js/2.60f24ff1.chunk.js": "/nutrition-tracker-int/static/js/2.60f24ff1.chunk.js",
-    "static/js/2.60f24ff1.chunk.js.map": "/nutrition-tracker-int/static/js/2.60f24ff1.chunk.js.map",
-    "index.html": "/nutrition-tracker-int/index.html",
-    "precache-manifest.e244d90940504be1fc0e6aa922093fad.js": "/nutrition-tracker-int/precache-manifest.e244d90940504be1fc0e6aa922093fad.js",
-    "service-worker.js": "/nutrition-tracker-int/service-worker.js",
-    "static/css/main.51f81693.chunk.css.map": "/nutrition-tracker-int/static/css/main.51f81693.chunk.css.map",
-    "static/js/2.60f24ff1.chunk.js.LICENSE.txt": "/nutrition-tracker-int/static/js/2.60f24ff1.chunk.js.LICENSE.txt"
+    "main.css": "/react-nutrition-tracker/static/css/main.51f81693.chunk.css",
+    "main.js": "/react-nutrition-tracker/static/js/main.c43651a7.chunk.js",
+    "main.js.map": "/react-nutrition-tracker/static/js/main.c43651a7.chunk.js.map",
+    "runtime-main.js": "/react-nutrition-tracker/static/js/runtime-main.7badd8c2.js",
+    "runtime-main.js.map": "/react-nutrition-tracker/static/js/runtime-main.7badd8c2.js.map",
+    "static/js/2.60f24ff1.chunk.js": "/react-nutrition-tracker/static/js/2.60f24ff1.chunk.js",
+    "static/js/2.60f24ff1.chunk.js.map": "/react-nutrition-tracker/static/js/2.60f24ff1.chunk.js.map",
+    "index.html": "/react-nutrition-tracker/index.html",
+    "precache-manifest.8a1b15b1d481332dab53be576e48f40f.js": "/react-nutrition-tracker/precache-manifest.8a1b15b1d481332dab53be576e48f40f.js",
+    "service-worker.js": "/react-nutrition-tracker/service-worker.js",
+    "static/css/main.51f81693.chunk.css.map": "/react-nutrition-tracker/static/css/main.51f81693.chunk.css.map",
+    "static/js/2.60f24ff1.chunk.js.LICENSE.txt": "/react-nutrition-tracker/static/js/2.60f24ff1.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.a6caa26a.js",
+    "static/js/runtime-main.7badd8c2.js",
     "static/js/2.60f24ff1.chunk.js",
     "static/css/main.51f81693.chunk.css",
     "static/js/main.c43651a7.chunk.js"
